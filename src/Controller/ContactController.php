@@ -14,12 +14,12 @@ class ContactController extends AbstractController
      */
     public function listeContact(): Response
     {
-        $manager=$this->$this->getDoctrine()->getManager();
-        $repo = $manager->getRepository(Contact::class);
+        $manager=$this->getDoctrine()->getManager();
+        $repo=$manager->getRepository(Contact::class);
         $contacts=$repo->findAll();
         return $this->render('contact/listeContacts.html.twig', [
             /*'controller_name' => 'ContactController',*/
-            'lesContacts' => $contacts
+            'lesContacts'=>$contacts,
         ]);
     }
 }
