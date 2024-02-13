@@ -1,3 +1,11 @@
 .avatar{
     border-radius: 50%;
 }
+
+.colorM{
+    border-color: blue;
+}
+
+.colorF{
+    border-color: red;
+}
