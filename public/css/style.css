@@ -20,6 +20,31 @@
     border-color: red;
 }
 
-.list-group-item{
-    background-color: white;
+/*Fiche contact*/
+
+.container{
+    size: 75%;
+    text-align: center;
+    align-items: center;
 }
+
+.container li{
+    list-style-type: none;
+    border-top: 2px rgba(0,0, 0, 0.3) solid;
+    margin-top: 2px;
+}
+
+.row{
+    align-items: center;
+}
+
+body{
+    
+    /*background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGxwNTBmajFrNmRwOGVnampmaDBpZDk4ZThzcjRlY2M1cHlrNXhzNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/THlB4bsoSA0Cc/giphy.gif');
+    background-image: url('https://media1.tenor.com/m/uDXN9Sje-A0AAAAd/skeleton-spinning.gif');
+    background-size:contain;*/
+}
+/*
+.card{
+    background-color: transparent;
+}*/

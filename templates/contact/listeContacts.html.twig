@@ -20,6 +20,7 @@
     </ul> #}
 
     <div class="row">
+    {{ dump(lesContacts) }}
         {% for contact in lesContacts %} 
             <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
                 <div class="card mb-3 container">
@@ -35,11 +36,15 @@
                         {% else %}
                             <li class="list-group-item li-F">Femme</li>
                         {% endif %}
+                        <div class = "card-body">
+                            <a href="{{path('ficheContact', {'id': contact.id})}}" class="btn btn-success btn-block text-center w-100">Détail ...</a>
+                        </div>
                     </ul>
                 </div>
             </div>
         {% endfor %}
     </div>
+
 
  {# <div class="card-body">
                 <a href="" class="btn btn-success btn-block text-center w-100">Détail ...</a>
