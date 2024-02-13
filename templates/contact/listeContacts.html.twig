@@ -21,9 +21,8 @@
 
     <div class="row">
         {% for contact in lesContacts %} 
-        {% if contact.getSexe() == 0 %}
             <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
-                <div class="card mb-3 container colorM">
+                <div class="card mb-3 container">
                     <h4 class="card-title text-center">{{contact.nom}} {{contact.prenom}}</h4>
                     <img style="height: auto; max-width: 200px; display: block;" src="{{contact.avatar}}" class="avatar mx-auto my-3" alt="image avatar">
                     <ul class="list-group list-group-flush">
@@ -31,25 +30,14 @@
                         <li class="list-group-item">{{contact.cp}}</li>
                         <li class="list-group-item">{{contact.ville}}</li>
                         <li class="list-group-item">{{contact.mail}}</li>
-                        <li class="list-group-item">
+                        {% if contact.getSexe() == 0 %}
+                            <li class="list-group-item li-M">Homme</li>
+                        {% else %}
+                            <li class="list-group-item li-F">Femme</li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
-        {% else %}
-            <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
-                <div class="card mb-3 container colorF">
-                    <h4 class="card-title text-center">{{contact.nom}} {{contact.prenom}}</h4>
-                    <img style="height: auto; max-width: 200px; display: block;" src="{{contact.avatar}}" class="avatar mx-auto my-3" alt="image avatar">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">{{contact.rue}}</li>
-                        <li class="list-group-item">{{contact.cp}}</li>
-                        <li class="list-group-item">{{contact.ville}}</li>
-                        <li class="list-group-item">{{contact.mail}}</li>
-                        <li class="list-group-item">
-                    </ul>
-                </div>
-            </div>
-        {% endif %} 
         {% endfor %}
     </div>
 

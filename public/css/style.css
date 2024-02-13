@@ -2,10 +2,24 @@
     border-radius: 50%;
 }
 
-.colorM{
+.li-M{
+    background-color: rgba(0, 0, 255, 0.5);
+    text-align: center;
+}
+
+.li-F{
+    background-color: rgba(255, 0, 0, 0.5);
+    text-align: center;
+}
+
+.card:has(.li-M){
     border-color: blue;
 }
 
-.colorF{
+.card:has(.li-F){
     border-color: red;
+}
+
+.list-group-item{
+    background-color: white;
 }
