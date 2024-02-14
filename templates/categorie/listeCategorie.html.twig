@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste Categories{% endblock %}
+
+{% block body %}
+    <h1>Liste des Catégories</h1>
+    <div class="d-flex justify-content-around">
+    {% for categorie in lesCategories %}
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
+            <div class="card mb-3 container">
+                <h4 class="card-title text-center">{{categorie.libelle}}</h4>
+                <img style="display: block;" src="{{categorie.image}}" class=" mx-auto my-3" alt="image avatar">
+                <a href="{{path('ficheCategorie', {'id': categorie.id})}}" class="btn btn-success btn-block text-center w-100 mb-2">Voir le détail</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

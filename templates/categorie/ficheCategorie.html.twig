@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fiche Categories{% endblock %}
+
+{% block body %}
+    <h1>Liste des Catégories</h1>
+    <div class ="catCard border border-dark m-4">
+        <div class="catTitle border border-light">
+            <h2>{{laCategorie.libelle}}</h2>
+        </div>
+        <div class ="d-flex p-3">
+            <div>
+                <img src="{{laCategorie.image}}" alt="">
+            </div>
+            <div>
+                <p>{{laCategorie.description}}</p>
+            </div>
+        </div>
+    </div>
+    <a href="{{path('categories')}}" class="btn btn-success btn-block text-center mx-4">Retourner à la liste</a>
+{% endblock %}

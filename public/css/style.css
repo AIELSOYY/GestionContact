@@ -1,3 +1,6 @@
+h1{
+    text-align: center;
+}
 .avatar{
     border-radius: 50%;
 }
@@ -22,13 +25,13 @@
 
 /*Fiche contact*/
 
-.container{
+.containers{
     size: 75%;
     text-align: center;
     align-items: center;
 }
 
-.container li{
+.containers li{
     list-style-type: none;
     border-top: 2px rgba(0,0, 0, 0.3) solid;
     margin-top: 2px;
@@ -37,6 +40,7 @@
 .row{
     align-items: center;
 }
+
 
 body{
     
