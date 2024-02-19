@@ -37,7 +37,8 @@
                             <li class="list-group-item li-F">Femme</li>
                         {% endif %}
                         <div class = "card-body">
-                            <a href="{{path('ficheContact', {'id': contact.id})}}" class="btn btn-success btn-block text-center w-100">Détail ...</a>
+                            <a href="{{path('ficheCategorie', {'id': contact.categorie.id})}}" class="btn btn-warning btn-block text-center w-100">{{contact.categorie.libelle}}</a>
+                            <a href="{{path('ficheContact', {'id': contact.id})}}" class="btn btn-success btn-block text-center w-100 mt-2">Détail ...</a>
                         </div>
                     </ul>
                 </div>

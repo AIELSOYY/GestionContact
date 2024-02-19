@@ -18,10 +18,14 @@
                         {% else %}
                             <li class="list-group-item li-F">Femme</li>
                         {% endif %}
+                        <div class = "card-body">
+                            <a href="{{path('ficheCategorie', {'id': leContact.categorie.id})}}" class="btn btn-warning btn-block text-center w-100">{{leContact.categorie.libelle}}</a>
+                        </div>
                     </ul>
                 </div>
         </div>
-        <a href="{{path('contacts')}}" class="btn btn-success btn-block text-center w-50">Retour à la liste</a>       
+    
     </div>
+            <a href="{{path('contacts')}}" class="btn btn-success btn-block text-center w-50">Retour à la liste</a>   
 
 {% endblock %}

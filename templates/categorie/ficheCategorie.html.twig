@@ -3,7 +3,7 @@
 {% block title %}Fiche Categories{% endblock %}
 
 {% block body %}
-    <h1>Liste des Catégories</h1>
+    <h1>Fiche de la catégorie {{laCategorie.libelle}}</h1>
     <div class ="border border-dark m-4 rounded-3">
         <div class="border-bottom border-light px-3">
             <h2>{{laCategorie.libelle}}</h2>
@@ -17,5 +17,33 @@
             </div>
         </div>
     </div>
-    <a href="{{path('categories')}}" class="btn btn-success btn-block text-center mx-4">Retourner à la liste</a>
+    <a href="{{path('categories')}}" class="btn btn-success btn-block text-center mx-4 mb-4">Retourner à la liste</a>
+
+    <div class="row"> 
+    {# {{ dump(lesContacts) }} #}
+        {% for contact in lesContacts %} 
+            <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
+                <div class="card mb-3 containers">
+                    <h4 class="card-title text-center">{{contact.nom}} {{contact.prenom}}</h4>
+                    <img style="height: auto; max-width: 200px; display: block;" src="{{contact.avatar}}" class="avatar mx-auto my-3" alt="image avatar">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{contact.rue}}</li>
+                        <li class="list-group-item">{{contact.cp}}</li>
+                        <li class="list-group-item">{{contact.ville}}</li>
+                        <li class="list-group-item">{{contact.mail}}</li>
+                        {% if contact.getSexe() == 0 %}
+                            <li class="list-group-item li-M">Homme</li>
+                        {% else %}
+                            <li class="list-group-item li-F">Femme</li>
+                        {% endif %}
+                        <div class = "card-body">
+                            <a href="{{path('ficheContact', {'id': contact.id})}}" class="btn btn-success btn-block text-center w-100 mt-2">Détail ...</a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="{{path('categories')}}" class="btn btn-success btn-block text-center mx-4 mb-4">Retourner à la liste</a>
+
 {% endblock %}

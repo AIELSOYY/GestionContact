@@ -28,8 +28,10 @@ class CategorieController extends AbstractController
     public function ficheCategorie($id, CategorieRepository $repo): Response
     {
         $categorie=$repo->find($id);
+        $contact=$categorie->getContacts();
         return $this->render('categorie/ficheCategorie.html.twig', [
             'laCategorie'=>$categorie,
+            'lesContacts'=>$contact,
         ]);
     }
 }
