@@ -10,6 +10,7 @@
             <div class="card mb-3 container">
                 <h4 class="card-title text-center">{{categorie.libelle}}</h4>
                 <img style="display: block;" src="{{categorie.image}}" class=" mx-auto my-3" alt="image avatar">
+                {# <p class = "border border-light border-2 overflow-auto mh-25">{{categorie.description}}</p> #}
                 <a href="{{path('ficheCategorie', {'id': categorie.id})}}" class="btn btn-success btn-block text-center w-100 mb-2">Voir le détail</a>
             </div>
         </div>
