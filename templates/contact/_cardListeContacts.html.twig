@@ -1,0 +1,27 @@
+<div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
+    <div class="card mb-3 containers">
+        <h4 class="card-title text-center">{{contact.nom}} {{contact.prenom}}</h4>
+        <img style="height: auto; max-width: 200px; display: block;" src="{{contact.avatar}}" class="avatar mx-auto my-3" alt="image avatar">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{contact.rue}}</li>
+            <li class="list-group-item">{{contact.cp}}</li>
+            <li class="list-group-item">{{contact.ville}}</li>
+            <li class="list-group-item">{{contact.mail}}</li>
+        {% if contact.getSexe() == 0 %}
+            <li class="list-group-item li-M">Homme</li>
+        {% else %}
+            <li class="list-group-item li-F">Femme</li>
+        {% endif %}
+        <div class = "card-body">
+            {% if contact.categorie.libelle == "Professionnel" %}
+                <a href="{{path('ficheCategorie', {'id': contact.categorie.id})}}" class="btn btn-warning btn-block text-center w-100 cPro">{{contact.categorie.libelle}}</a>
+            {% elseif contact.categorie.libelle == "Privé" %}
+                <a href="{{path('ficheCategorie', {'id': contact.categorie.id})}}" class="btn btn-warning btn-block text-center w-100 cPriv">{{contact.categorie.libelle}}</a>
+            {% elseif contact.categorie.libelle == "Sport" %}
+                <a href="{{path('ficheCategorie', {'id': contact.categorie.id})}}" class="btn btn-warning btn-block text-center w-100 cSport">{{contact.categorie.libelle}}</a>
+            {% endif %}
+            <a href="{{path('ficheContact', {'id': contact.id})}}" class="btn btn-success btn-block text-center w-100 mt-2">Détail ...</a>
+        </div>
+        </ul>
+    </div>
+</div>
